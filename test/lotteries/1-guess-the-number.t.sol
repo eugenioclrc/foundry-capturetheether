@@ -16,7 +16,7 @@ contract GuessTheNumberChallengeTest is Test {
 
     function testChallenge() public {
         // your code
-
+        target.guess{value: 1 ether}(42);
         // end of your code
 
         assertTrue(target.isComplete());
