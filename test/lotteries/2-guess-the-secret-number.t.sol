@@ -16,7 +16,13 @@ contract GuessTheSecretNumberChallengeTest is Test {
 
     function testChallenge() public {
         // your code
-        
+        uint8 i = 0;
+
+        bytes32 _hashAnswer = target.answerHash();
+        while(_hashAnswer != keccak256(abi.encodePacked(i))) {
+            ++i;
+        }
+        target.guess{value: 1 ether}(uint8(i));
         // end of your code
 
         assertTrue(target.isComplete());
