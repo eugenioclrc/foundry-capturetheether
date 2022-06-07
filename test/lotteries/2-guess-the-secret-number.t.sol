@@ -11,7 +11,7 @@ import "src/lotteries/2.guess-the-secret-number.sol";
 contract GuessTheSecretNumberChallengeTest is Test {
     GuessTheSecretNumberChallenge target;
     address hacker;
-    
+
     function setUp() public {
         target = new GuessTheSecretNumberChallenge{value: 1 ether}();
 
@@ -21,7 +21,7 @@ contract GuessTheSecretNumberChallengeTest is Test {
     }
 
     function testChallenge() public {
-        vm.prank(hacker);        
+        vm.startPrank(hacker);
         // your code
         uint8 i = 0;
 
@@ -29,7 +29,7 @@ contract GuessTheSecretNumberChallengeTest is Test {
         while(_hashAnswer != keccak256(abi.encodePacked(i))) {
             ++i;
         }
-        target.guess{value: 1 ether}(uint8(i));
+        target.guess{value: 1 ether}(i);
         // end of your code
         vm.stopPrank();
         assertTrue(target.isComplete());

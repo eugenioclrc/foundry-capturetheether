@@ -21,7 +21,7 @@ contract GuessTheNumberChallengeTest is Test {
     }
 
     function testChallenge() public {
-        vm.prank(hacker);        
+        vm.startPrank(hacker);
         // your code
         target.guess{value: 1 ether}(42);
         // end of your code
