@@ -25,6 +25,8 @@ contract GuessTheRandomNumberChallengeTest is Test {
         // your code
         
         // kaktheplanet
+        uint8 secretData = uint8(uint256(vm.load(address(target), bytes32(uint256(0)))));
+        target.guess{value: 1 ether}(secretData);
         
         // end of your code
         vm.stopPrank();
