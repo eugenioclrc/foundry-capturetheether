@@ -21,7 +21,7 @@ contract GuessTheSecretNumberChallengeTest is Test {
     }
 
     function testChallenge() public {
-        vm.prank(hacker);        
+        vm.startPrank(hacker);
         // your code
         
         // kaktheplanet
