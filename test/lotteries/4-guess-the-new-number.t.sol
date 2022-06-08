@@ -4,16 +4,16 @@ pragma solidity ^0.8.13;
 
 import "forge-std/Test.sol";
 
-import "src/lotteries/3.guess-the-random-number.sol";
+import "src/lotteries/4.guess-the-new-number.sol";
 
 // add extra contracts you need to hack here
 
-contract GuessTheRandomNumberChallengeTest is Test {
-    GuessTheRandomNumberChallenge target;
+contract GuessTheNewNumberChallengeTest is Test {
+    GuessTheNewNumberChallenge target;
     address hacker;
     
     function setUp() public {
-        target = new GuessTheRandomNumberChallenge{value: 1 ether}();
+        target = new GuessTheNewNumberChallenge{value: 1 ether}();
 
         hacker = vm.addr(1);
         vm.label(hacker, "Hacker");
